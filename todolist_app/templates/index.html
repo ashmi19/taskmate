@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+<title> Taskmate - Home </title>
+{% endblock title %}
+
+{% block content %}
+
+{% comment %} <div  class="container-fluid" style="background: url(https://images.unsplash.com/photo-1522836924445-4478bdeb860c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80) ;  background-size: cover !important; background-position: center;"> {% endcomment %}
+    <div class="container" >
+         <div class = "mt-5  row d-flex justify-content-center align-items-center">
+               <div class = "col-lg-4  " >
+                   <img src="{% static 'images/index1.jpg' %}" class ="rounded-lg shadow-sm d-none d-lg-block" alt="Notes" width="360px" height="250px"> 
+               </div>
+
+               <div class = "col-lg-4  col-md-6 col-10 mx-auto ">
+                    <img src="{% static 'images/index2.jpg' %}" class =" rounded-lg shadow-sm " alt="Notes" width="360px" height="250px"> 
+               </div>
+
+               <div class = "col-lg-4 ">
+                    <img src="{% static 'images/index3.jpg' %}" class ="rounded-lg shadow-sm d-none d-lg-block" alt="Notes" width="360px" height="250px"> 
+               </div>
+         </div>
+         <div class = "row mt-5 ">
+               <div class = "col-md-10 offset-md-1">
+                   <center> <p class="h2 text-success">Easy to use , Anytime , Anywhere!</p>  </center>
+                    <center> <p class="h4 mt-3">Plan your day better , get your life organized!</p>  </center>
+                    <center> <p class="h5">TASKMATE lets you keep track of all your tasks, all in the same place!</p>  </center>
+                   
+  
+                         {% if user.is_authenticated %}
+                             <center><a href="{% url 'todolist' %}"><button type="button" class="mb-5 btn btn-success shadow btn-lg mt-3">Get Started</button>  </a></center>
+                         {% else %}
+                          <center><a href="{% url 'register' %}"><button type="button" class="mb-2 btn btn-success btn-lg shadow mt-3">Register</button>  </a></center>
+                          
+                          <center><p class="text-muted mt-1"> If you already have an account , <a href="{% url 'login' %}" class ="text-success">login</a> here</p> </center>
+                         {% endif %}
+                                        
+                   
+               </div
+         </div
+    </div>
+{% comment %} </div> {% endcomment %}
+{% endblock content%}

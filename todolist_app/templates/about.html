@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+<title> About Us - Taskmate</title>
+{% endblock title %}
+
+{% block content %}
+
+    <div class="container">
+        </br>
+
+
+            <div class = "col-md-10 offset-md-1">
+                   
+                        <center> <p class="h4 mt-3 text-muted font-italic">“It takes as much energy to wish as it does to plan.”</p>  </center>
+                        <center> <p class=" mt-3 text-muted font-italic">– Eleanor Roosevelt</p>  </center>
+
+                        </br>
+                    <center> <p class=" mt-3">We bring you a perfect recipe for success - TASKMATE</p>  </center>
+                    <center> <p class=" mt-3">Have a list of chores? Bundles of assignment? But don't know how to keep a track of all them?</p>  </center>
+                    <center> <p class=" mt-3">Don't worry! We got your back buddy! TASKMATE comes to your rescue!</p>  </center>
+                    <center> <p class=" mt-3">Now you can list all your chores in one place and access from anywhere.</p>  </center>
+                    <center> <p class=" mt-3">And don't worry at all. We're completely secure! Now what are you waiting for?</p>  </center>
+
+                            </br>
+                        </br>
+                         <center><a href="{% url 'todolist' %}"><button type="button" class="mb-5 btn btn-success shadow btn-lg mt-3">Get Started</button>  </a></center>
+                        </br>
+                        </br>
+                     <center> <p class="h5 text-success">This website is made with love in India.</p>  </center>
+             </div
+    </div>
+
+{% endblock content%}

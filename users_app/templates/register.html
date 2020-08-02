@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+<title> Register - Taskmate </title>
+{% endblock title %}
+
+{% block content %}
+
+
+
+
+    <div class="container">
+        
+        <h2 class = "text-success mt-5"> Register on Taskmate </h2>
+        <p class="text-muted mt-1"> If you already have an account , <a href="{% url 'login' %}" class ="text-success">login</a> here.</p>
+        {% if messages %}
+        {% for message in messages %}
+    
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong> {{message}} </strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+        </br>
+        {% endfor %}
+        {% endif %}
+
+           
+         <form method = "POST" class="mt-5  col-lg-6 col-md-10 col-12">
+              {% csrf_token %}
+
+              {{register_form |crispy }}
+              
+
+              <button type="submit" class="btn shadow btn-success mb-5"> Register </button>
+         </form>
+    </div>
+
+{% endblock content%}
